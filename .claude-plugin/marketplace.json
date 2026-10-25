@@ -1,0 +1,16 @@
+{
+  "name": "michael-ivlev",
+  "owner": {
+    "name": "Michael Ivlev"
+  },
+  "metadata": {
+    "description": "Michael Ivlev's Claude Code skills, shared with the team."
+  },
+  "plugins": [
+    {
+      "name": "workflows",
+      "source": "./plugins/workflows",
+      "description": "Team workflows: orchestrate-tickets finishes a batch of GitHub issues with parallel AI agents, PR reviews and a project board."
+    }
+  ]
+}
