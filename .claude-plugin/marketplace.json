@@ -8,9 +8,9 @@
   },
   "plugins": [
     {
-      "name": "workflows",
-      "source": "./plugins/workflows",
-      "description": "Team workflows: orchestrate-tickets (parallel AI agents finish a batch of GitHub issues), meshy-3d and tripo-3d (AI-generated 3D models)."
+      "name": "flow",
+      "source": "./plugins/flow",
+      "description": "The whole development flow from an idea, one ticket or many tickets (/flow:go): spec, plan, parallel build in worktrees, PR review until approved, board, final test run. Plus Meshy and Tripo 3D model generation."
     }
   ]
 }

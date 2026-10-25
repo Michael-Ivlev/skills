@@ -1,8 +1,0 @@
-{
-  "name": "workflows",
-  "version": "1.1.0",
-  "description": "Team workflows: orchestrate-tickets (parallel AI agents finish a batch of GitHub issues with PR reviews and a project board), meshy-3d and tripo-3d (AI-generated 3D models from a job file, with a credit budget).",
-  "author": {
-    "name": "Michael Ivlev"
-  }
-}
