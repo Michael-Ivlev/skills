@@ -1,4 +1,4 @@
-# claude-skills
+# skills
 
 Claude Code skills shared by the team, published as a plugin marketplace. Private: you need access to this repo to install it.
 
@@ -7,7 +7,7 @@ Claude Code skills shared by the team, published as a plugin marketplace. Privat
 In Claude Code (any project):
 
 ```
-/plugin marketplace add Michael-Ivlev/claude-skills
+/plugin marketplace add Michael-Ivlev/skills
 /plugin install workflows@michael-ivlev
 ```
 
