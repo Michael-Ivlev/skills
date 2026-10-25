@@ -17,7 +17,7 @@ Restart Claude Code if the skills don't show up. Get updates later with `/plugin
 
 | Skill | Command | What it does |
 |---|---|---|
-| orchestrate-tickets | `/workflows:orchestrate-tickets <scope>` | Finishes a set of GitHub issues (a range, milestone, label or roadmap step) as the orchestrator of an AI team: tickets run in parallel in their own git worktrees without touching the same files, cards move across the GitHub project board (In Progress, In Review, Done), a reviewer agent reviews every PR on the PR itself until it approves, approved PRs merge and their issues close, and slow end-to-end tests run once at the end with a test plan for humans. Needs `gh` signed in with the `project` scope (`gh auth refresh -s project`). |
+| orchestrate-tickets | `/workflows:orchestrate-tickets <scope>` | Finishes a set of GitHub issues (a range, milestone, label or roadmap step) as the orchestrator of an AI team: tickets run in parallel in their own git worktrees without touching the same files, cards move across the GitHub project board (In Progress, In Review, Done), a reviewer agent reviews every PR on the PR itself until it approves, approved PRs merge and their issues close, slow end-to-end tests run once at the end with a test plan for humans, and a cleanup agent then removes or resets the worktrees and archives the run's ledger. Needs `gh` signed in with the `project` scope (`gh auth refresh -s project`). |
 
 ## Layout
 

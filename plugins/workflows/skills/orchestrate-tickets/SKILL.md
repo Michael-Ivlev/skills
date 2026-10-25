@@ -9,7 +9,7 @@ You are the **orchestrator**. You don't write product code yourself: you plan, h
 
 The human wants this to run **on its own**. Ask everything you need **once, in the setup**; after that, stop only for the cases in *When to stop and ask*.
 
-Role prompts live next to this file: `roles/developer.md`, `roles/qa.md`, `roles/reviewer.md`, `roles/tester.md`. When you brief an agent, give it the role file's text plus the ticket brief.
+Role prompts live next to this file: `roles/developer.md`, `roles/qa.md`, `roles/reviewer.md`, `roles/tester.md`, `roles/cleanup.md`. When you brief an agent, give it the role file's text plus the ticket brief.
 
 ## 0. Setup (once per run; skip what the ledger already records)
 
@@ -23,11 +23,12 @@ Role prompts live next to this file: `roles/developer.md`, `roles/qa.md`, `roles
    - How many lanes run in parallel (default 3; fewer when each lane needs a heavy tool running: count its RAM against the machine's).
    - When slow end-to-end / in-app tests run: only at the end (default), or per ticket.
    - Whether any running tool holds unsaved human work you may save or close.
+   - At the end: keep the lane worktrees for the next run (warm caches, default when a fresh checkout is expensive) or remove them (frees disk).
 6. **Write the ledger** (below) with all of it. From now on the ledger, not your memory, is the truth: a new session continues from it.
 
 ## Lanes: one ticket, one worktree
 
-A **lane** is a persistent folder with its own checkout and its own copies of everything a running tool writes (caches, local databases, temp folders, ports). Lane 1 is the main checkout; the others are `git worktree add <repo>-lanes/laneN` beside the repo. Lanes are kept between tickets so their caches stay warm; don't use the Agent tool's `isolation: "worktree"` when a fresh checkout is expensive to build or import.
+A **lane** is a persistent folder with its own checkout and its own copies of everything a running tool writes (caches, local databases, temp folders, ports). Lane 1 is the main checkout; the others are `git worktree add <repo>-lanes/laneN` beside the repo. Lanes are kept between tickets so their caches stay warm, and a lane folder kept from an earlier run is reused (check `git worktree list`) rather than made again; don't use the Agent tool's `isolation: "worktree"` when a fresh checkout is expensive to build or import.
 
 - A ticket's branch is made in its lane from the latest merge target: `git fetch origin && git switch -c <branch> origin/<target>`. A lane never checks out the target branch itself (another worktree may hold it).
 - Seed a new lane's heavy caches by copying lane 1's (with lane 1's tool closed) when the tool allows it. Check once that tools started from different lanes don't talk to each other (CLIs that find "the" running instance, fixed ports); if they do, give each lane its own port or run that tool's work one lane at a time.
@@ -88,7 +89,9 @@ When every ticket in scope except human-only ones is merged (or blocked):
    - **The test run:** suite counts, every end-to-end test with pass / fail and evidence (logs, screenshots).
    - **What to test by hand:** every ticket's manual test steps merged into one short checklist in the order a user meets the features, not ticket by ticket.
    - **Known gaps:** failed tests, blocked tickets, defaults assumed for open decisions, follow-ups for new tickets.
-4. Post the checklist on the human-only ticket(s) in scope (or report it if there is none) and stop. Report: merged, blocked and why, and the link to the test plan.
+4. Post the checklist on the human-only ticket(s) in scope (or report it if there is none).
+5. **Clean up.** When every agent has finished, hand `roles/cleanup.md` to a cleanup agent with: the ledger path, the lanes, the merge target, and the setup's keep-or-remove answer (ask the human now if the ledger has none). It closes tools left running in the lanes, removes or resets the lanes, deletes merged ticket branches, puts the main checkout back on the target, checks every merged ticket's card is Done, and archives the ledger as `ledger-<YYYY-MM-DD>.md` so the next run starts fresh. It never deletes unmerged or uncommitted work: anything like that is left in place and reported. Check its report against `git worktree list` and `git status` yourself.
+6. Stop and report: merged, blocked and why, the link to the test plan, and what the cleanup kept and removed.
 
 ## When to stop and ask
 

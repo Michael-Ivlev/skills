@@ -1,6 +1,6 @@
 {
   "name": "workflows",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Team workflows: orchestrate-tickets finishes a batch of GitHub issues with parallel AI agents, PR reviews and a project board.",
   "author": {
     "name": "Michael Ivlev"
