@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*key*.txt
+.meshy_key
+.tripo_api_key
+meshy-out/
+tripo-out/

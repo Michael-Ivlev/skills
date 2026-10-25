@@ -10,7 +10,7 @@
     {
       "name": "workflows",
       "source": "./plugins/workflows",
-      "description": "Team workflows: orchestrate-tickets finishes a batch of GitHub issues with parallel AI agents, PR reviews and a project board."
+      "description": "Team workflows: orchestrate-tickets (parallel AI agents finish a batch of GitHub issues), meshy-3d and tripo-3d (AI-generated 3D models)."
     }
   ]
 }
