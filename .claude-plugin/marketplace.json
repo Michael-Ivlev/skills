@@ -10,7 +10,7 @@
     {
       "name": "flow",
       "source": "./plugins/flow",
-      "description": "The whole development flow from an idea, one ticket or many tickets (/flow:go): spec, plan, parallel build in worktrees, PR review until approved, board, final test run. Plus Meshy and Tripo 3D model generation."
+      "description": "The whole development flow from an idea, one ticket or many tickets (/flow:go): spec, plan, parallel build in worktrees, PR review until approved, board, final test run. Plus Meshy and Tripo 3D model generation and painted outfits on one rigged body."
     }
   ]
 }
