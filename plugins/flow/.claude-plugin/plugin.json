@@ -1,9 +1,0 @@
-{
-  "name": "flow",
-  "version": "2.1.0",
-  "description": "The whole development flow - define, plan, build, verify, review, ship - from an idea, one ticket or many tickets: /flow:go. Parallel AI agents in git worktrees, PRs reviewed on the PR until approved, the GitHub project board, one test run at the end. Engineering skills adapted from addyosmani/agent-skills (MIT), plus Meshy and Tripo 3D model generation and outfits painted onto one rigged body's UV map.",
-  "author": {
-    "name": "Michael Ivlev"
-  },
-  "license": "MIT"
-}
