@@ -55,6 +55,6 @@ To install only some skills, copy and link only those folders.
 
 ## Credits
 
-`4x4`, `ask-then-build`, `decisions`, `handoff`, `occams-razor` and `remind` come from [davidondrej/skills](https://github.com/davidondrej/skills) by David Ondrej, under the MIT license. They are unmodified copies. His license is in [`LICENSE-third-party/davidondrej-skills-LICENSE`](LICENSE-third-party/davidondrej-skills-LICENSE).
+`4x4`, `ask-then-build`, `decisions`, `handoff`, `occams-razor` and `remind` come from [davidondrej/skills](https://github.com/davidondrej/skills) by David Ondrej, under the MIT license. They are unmodified copies.
 
 The version before this library, with the `flow` plugin, is kept at the `pre-refactor` tag.
