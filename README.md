@@ -53,6 +53,17 @@ Put the skills in `~/.agents/skills/`, then symlink each one for the agents that
 
 To install only some skills, copy and link only those folders.
 
+### Claude Code plugin marketplace
+
+In Claude Code you can skip the steps above and install all seven skills as one plugin:
+
+```
+/plugin marketplace add Michael-Ivlev/skills
+/plugin install skills@michael-ivlev
+```
+
+This is optional. The only file it needs is `.claude-plugin/marketplace.json`; the skills themselves stay plain folders.
+
 ## Credits
 
 `4x4`, `ask-then-build`, `decisions`, `handoff`, `occams-razor` and `remind` come from [davidondrej/skills](https://github.com/davidondrej/skills) by David Ondrej, under the MIT license. They are unmodified copies.

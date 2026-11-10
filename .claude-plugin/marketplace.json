@@ -1,0 +1,26 @@
+{
+  "name": "michael-ivlev",
+  "owner": {
+    "name": "Michael Ivlev"
+  },
+  "metadata": {
+    "description": "A small skill library: six skills from David Ondrej, one of mine."
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "strict": false,
+      "description": "Seven skills: 4x4, ask-then-build, decisions, handoff, occams-razor, remind and peer-review.",
+      "skills": [
+        "./skills/4x4",
+        "./skills/ask-then-build",
+        "./skills/decisions",
+        "./skills/handoff",
+        "./skills/occams-razor",
+        "./skills/remind",
+        "./skills/peer-review"
+      ]
+    }
+  ]
+}
